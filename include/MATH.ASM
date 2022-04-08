@@ -4,59 +4,6 @@
 ;
 
 ; ----
-; mulu8
-; ----
-; 8-bit unsigned multiplication
-; ----
-; OUT : _CX = _AL * _BL
-; ----
-
-mulu8:
-	lda   <_bl
-	sta   <_ch
-
-	cla
-	ldy   #8
-.loop:
-	asl   A
-	rol   <_ch
-	bcc   .next
-	add   <_al
-	bcc   .next
-	inc   <_ch
-.next:
-	dey
-	bne   .loop
-
-	sta   <_cl
-	rts
-
-; ----
-; mulu16
-; ----
-; 16-bit unsigned multiplication
-; ----
-; OUT : _DX/CX = _AX * _BX
-; ----
-
-mulu16:
-	stw   <_bx,<_dx
-	stwz  <_cx
-	ldy   #16
-.loop:
-	aslw  <_cx
-	rolw  <_dx
-	bcc   .next
-
-	addw  <_ax,<_cx
-	bcc   .next
-	incw  <_dx
-.next:
-	dey
-	bne   .loop
-	rts
-
-; ----
 ; mulu32
 ; ----
 ; 32-bit unsigned multiplication

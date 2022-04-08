@@ -57,25 +57,25 @@ set_palette:
 ;       _CH = nb of row
 ; ----
 
-load_bat:
-	cly
-.l1:	jsr   set_write
-	ldx   <_cl
-.l2:	lda   [_si],Y
-	sta   video_data
-	iny
-	lda   [_si],Y
-	sta   video_data+1
-	iny
-	bne   .n1
-	inc   <_si+1
-.n1:	dex
-	bne   .l2
-	
-	addw  <_dx,<_di
-	dec   <_ch
-	bne   .l1
-	rts
+;load_bat:
+;	cly
+;.l1:	jsr   set_write
+;	ldx   <_cl
+;.l2:	lda   [_si],Y
+;	sta   video_data
+;	iny
+;	lda   [_si],Y
+;	sta   video_data+1
+;	iny
+;	bne   .n1
+;	inc   <_si+1
+;.n1:	dex
+;	bne   .l2
+;	
+;	addw  <_dx,<_di
+;	dec   <_ch
+;	bne   .l1
+;	rts
 
 
 ; ----
@@ -175,14 +175,14 @@ load_vram:
 ; IN :  _DI = VRAM location
 ; ----
 
-set_read:
-	vreg  #$01
-	lda   <_di 
-	sta   video_data
-	lda   <_di+1
-	sta   video_data+1
-	vreg  #$02
-	rts 
+;set_reada:
+;	vreg  #$01
+;	lda   <_di 
+;	sta   video_data
+;	lda   <_di+1
+;	sta   video_data+1
+;	vreg  #$02
+;	rts 
 
 
 ; ----
