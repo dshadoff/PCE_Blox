@@ -5,7 +5,7 @@ Falling Blocks-type game written in Assembler for PC Engine in 1999
 
 ## Build
 
-This was originally built back in 1998/199 with MagicKit 2.01; subsequent versions of the
+This was originally built back in 1998/1999 with MagicKit 2.01; subsequent versions of the
 "standard" library appear to have changed sematics which might cause it to no longer build.
 
 So, I have packaged the original build into a ZIP file in the build directory, called "19990527.zip".
